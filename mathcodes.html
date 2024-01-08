@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="firstnum">
+    <input type="number" id="secondnum">
+    <button onclick="doSum()">+</button>
+    <button onclick="doSub()">-</button>
+    <button onclick="domul()">*</button>
+    <button onclick="doDiv()">/</button>
+    <button onclick="dorem()">%</button>
+    <p id="result">Result</p>
+
+    
+    <script>
+
+        var firstnum= document.getElementById("firstnum");
+        var secondnum= document.getElementById("secondnum");
+        var result= document.getElementById("result");
+
+        function doSum() {
+            result.innerText =`The Result: ${+firstnum.value + +secondnum.value}`;                          
+        }
+        function doSub() {
+            result.innerText =`The Result: ${+firstnum.value - +secondnum.value}`;                           
+        }
+        function domul() {
+            result.innerText =`The Result: ${+firstnum.value * +secondnum.value}` ;                          
+        }
+        function doDiv() {
+            result.innerText =`The Result: ${+firstnum.value / +secondnum.value}`;                           
+        }
+        function dorem() {
+            result.innerText =`The Result: ${+firstnum.value % +secondnum.value}` ;                          
+        }
+        
+    </script>
+
+
+
+</body>
+</html>

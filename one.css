@@ -1,0 +1,184 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #f6fcfc;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  .dropdwn {
+    background-color: #f7f2f2;
+    text-align: center;
+  }
+  
+  .dropdwn ul {
+    list-style-type: none;
+    display: block;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  
+  .dropdwn ul li {
+    width: 70px;
+    height: 15px;
+    padding: 15px;
+  }
+  
+  .dropdwn ul li a {
+    text-decoration: none;
+    color: #6084a4;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .dropdwn ul li a:hover {
+    color: #44ce6f;
+    cursor: pointer;
+  }
+  
+  .dropdwn-1 {
+    display: none;
+  }
+  
+  .dropdwn ul li:hover > .dropdwn-1 {
+    display: block;
+  }
+  
+  .dropdwn-1 {
+    height: 180px;
+    width: 125px;
+    background-color: #f7f2f2;
+  }
+  
+  .dropdwn-1 li a {
+    font-size: 15px;
+    padding: 20px 0px 20px 0px;
+    width: 150px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .dropdwn-2 {
+    display: none;
+  }
+  
+  .dropdwn ul li:hover > .dropdwn-2 {
+    display: block;
+  }
+  
+  .btn-1, .btn-2 {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+  .btn-1 {
+    border: 3px dashed #cdf1d8;
+    background: transparent;
+  }
+  
+  .btn-1:hover {
+    background-color: #44ce6f;
+  }
+  
+  .btn-2 {
+    background: #c679e3;
+    border: 5px solid #c679e3;
+  }
+  
+  .btn-2:hover {
+    cursor: pointer;
+    background-color: #44ce6f;
+    border: 5px solid #44ce6f;
+  }
+  
+  .second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 150px;
+  }
+  
+  .third {
+    width: 500px;
+  }
+  
+  .third .three {
+    font-size: 50px;
+    color: #0e314c;
+  }
+  
+  .third .four {
+    color: #6084a4;
+  }
+  
+  .third .five {
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    background-color: #44ce6f;
+    color: white;
+    font-weight: bold;
+    border: 0px solid #44ce6f;
+  }
+  
+  .third .five:hover {
+    cursor: pointer;
+    background-color: #c679e3;
+  }
+  
+  .fourth {
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+  }
+  
+  .fourth .seven {
+    font-size: 16px;
+    color: #0e314c;
+    font-weight: 700;
+  }
+  
+  .fourth .six {
+    width: 350px;
+    height: 40px;
+    background-color: #e3e9e9;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0px solid #e3e9e9;
+    padding-left: 15px;
+  }
+  
+  .fourth .ten {
+    width: 350px;
+    height: 120px;
+    background-color: #e3e9e9;
+    font-weight: bold;
+    font-size: 17px;
+    border: 0px solid #e3e9e9;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  
+  .fourth .eight {
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+    background-color: #44ce6f;
+    color: white;
+    font-weight: bold;
+    border: 0px solid #44ce6f;
+  }
+  
+  .fourth .eight:hover {
+    cursor: pointer;
+    background-color: #c679e3;
+  }
+  /*# sourceMappingURL=template.css.map */

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="DT"></p>
+    
+<button onclick="Displaytime()">Displaytime</button><br><br>
+<button onclick="Stoptime()">Stoptime</button><br><br>
+
+
+    <input type="datetime-local" id="db"><br><br>
+     <button onclick="calculateAge()">Calculate Age</button>
+     <div id="result"></div>
+
+    <script>
+        var intervalID;
+
+        function Displaytime(){
+           intervalID= setInterval(update,1000);
+        }
+            function Stoptime(){
+                clearInterval(intervalID);
+            }
+            function update(){
+                var currentDate=new Date();
+                var format=currentDate.toLocaleString();
+                document.getElementById("DT").innerText=format;
+                
+ }
+
+ function calculateAge() {
+    
+    var dob = document.getElementById("db").value;
+    var currentDate = new Date();
+    var dobDate = new Date(dob);
+    var timeDiff = currentDate - dobDate;
+    var ageinyears = Math.floor(timeDiff / (365.25 * 24 * 60 * 60 * 1000));
+    var ageinmonths=Math.floor((timeDiff % (365.25 * 24 * 60 * 60 * 1000))/(30.44* 24 * 60 * 60 * 1000));
+    var ageindays=Math.floor((timeDiff % (30.44* 24 * 60 * 60 * 1000))/(24*60*60*1000));
+    var hours = Math.floor((timeDiff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    var minutes = Math.floor((timeDiff % (60 * 60 * 1000)) / (60 * 1000));
+
+    var resultElement=document.getElementById("result")
+    resultElement.innerHTML=("your age is:" +ageinyears + "years," +ageinmonths+ "months," +ageindays+ "days,"+ hours + " hours, " + minutes + " minutes.");
+  }
+    </script>
+</body>
+</html>

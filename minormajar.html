@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var users=[
+            {
+                userName :"abc",
+                age:23,
+                marks:{a:20,b:30,c:40}
+            },
+            {
+                userName :"bcd",
+                age:20,
+                marks:{a:40,b:40,c:40}
+            },
+            {
+                userName :"cde",
+                age:19,
+                marks:{a:40,b:30,c:40}
+            },
+            {
+                userName :"def",
+                age:22,
+                marks:{a:50,b:30,c:40}
+            }
+        ];
+
+        const minors = [];
+        const majors = [];
+
+        users.forEach(user => {
+            user.age >  20 ? minors.push(user) : majors.push(user);
+        });
+
+        console.log(minors,majors);
+
+    </script>
+</body>
+</html>
