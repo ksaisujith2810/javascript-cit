@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUser(userId) {
+            return new Promise((resolve, reject) => {
+                console.log('Getting users');
+                setTimeout(() => {
+                    resolve({
+                        userId: userId,
+                        username:'Admin'
+                    })
+                },2000);
+            })
+        }
+    
+        function getServices(user) {
+            return new Promise((resolve, reject) => {
+                console.log(`getting services for ${user.username}`);
+                setTimeout(()=>{
+                    resolve(['Email','print','Fax']);
+                },2000)               
+            })
+        }
+
+        function getServiceCost(services) {
+            return new Promise((resolve, reject) => {
+                console.log(`calculating the services cost of ${services}`);
+                setTimeout(() => {
+                    resolve(services.length * 200)
+                }, 2000);
+            })
+        }
+
+        // using try and catch
+        try{
+            getUser(100).then(getServices).then(getServiceCost).then(console.log);
+        }
+        catch{
+            console.error(`an error occured ${error}`);
+        }
+
+        // using .then
+        
+        // getUser(100)
+        // .then(getServices)
+        // .then(getServiceCost)
+        // .then((result) => console.log("cost",result));
+    </script>
+</body>
+</html>l

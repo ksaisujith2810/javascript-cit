@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getStudent(studentId,studentName,studentMarks) {
+            return new Promise((resolve, reject) => {
+                console.log(' Student Details');
+                setTimeout(() => {
+                    resolve({
+                       studentId:studentId,
+                       studentName:studentName,
+                       studentMarks:studentMarks,
+
+                    })
+                }, 2000);
+            })
+        }
+
+        function getName(name) {
+            return new Promise((resolve, reject) => {
+                console.log(`StudentName: ${name.studentName}`);
+                setTimeout(() => {
+                    resolve(
+                        name.studentMarks,
+                    )
+                },2000);
+            })
+        }
+
+        function getMarks(marks) {
+            return new Promise((resolve, reject) => {
+                console.log(`Sujith Marks:${marks}`);
+                let total=0;
+                 marks.map(mark => total += mark)
+                setTimeout(() => {
+                    resolve({
+                        studentmarks:marks,
+                        studenttotal:total
+                    })
+                }, 2000);
+            })
+        }
+
+        function getresult(studentDetails) {
+            return new Promise((resolve, reject) => {
+                let result ="";
+                for(let a of studentDetails.studentmarks){
+                    if(a > 30){
+                        result="PASS"
+                    }else{
+                        result = "FAIL";
+                        break;
+                    }
+                }
+                resolve({
+                    total:studentDetails.studenttotal,
+                    result:result
+                })
+            })
+        }
+
+        // using Async/Await
+        async function showdetails(){
+            try{
+                let Student = await getStudent(100,"sujith",[40,50,60]);
+                let Name= await getName(Student);
+                let Marks=await getMarks(Name);
+                let result= await getresult(Marks);
+                console.log("Total Marks :"+Marks.studenttotal+"\nResult:"+result.result);
+            }
+            catch(error){
+                console.log('Error:' + error);
+            }
+        }
+        showdetails();
+
+        // using .then
+        // getStudent(100,'sujith',[60,50,80])
+        // .then(getName)
+        // .then(getMarks)
+        // .then(getresult)
+        // .then((result)=>console.log("Result:",result));
+
+    </script>
+</body>
+</html>

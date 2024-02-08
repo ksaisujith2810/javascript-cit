@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getEmployeeDetails(eId,eName,esalary,eworkingdays) {
+            return new Promise((resolve, reject) => {
+                console.log(' Employee Details');
+                setTimeout(() => {
+                    resolve({
+                       eId:eId,
+                       eName:eName,
+                       esalary:esalary,
+                       eworkingdays:eworkingdays,
+                    })
+                }, 2000);
+            })
+        }
+       function getmonthlysalary(e){
+        console.log('employeeWorkingDays');
+        let monthsalary=0;
+        monthsalary=Math.round((e.esalary/365)*e.eworkingdays);
+        return new Promise((resolve, reject) => { 
+            setTimeout(()=>{
+           resolve({
+            ...e,
+            emonthsalary:monthsalary
+           })
+          
+          },2000);
+        })
+       }
+        
+       
+
+
+        getEmployeeDetails(1234,'sujith',120000,25)
+     //  .then(getEmployeeDetails)
+       .then(getmonthlysalary)
+      .then((result)=>console.log("Result:",result));
+    </script>
+</body>
+</html>
